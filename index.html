@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crezy Fashion Network | Premium Men's Style</title>
+<style>
+:root{--bg:#090909;--card:#151515;--gold:#d6b35a;--text:#f5f5f5;--muted:#a8a8a8}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{position:sticky;top:0;z-index:10;background:#090909ee;backdrop-filter:blur(10px);border-bottom:1px solid #262626;padding:16px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;letter-spacing:1px;font-size:20px}.logo span{color:var(--gold)}
+nav a{color:#ddd;text-decoration:none;margin-left:18px;font-size:14px}.cartbtn{background:var(--gold);color:#111;border:0;border-radius:20px;padding:9px 14px;font-weight:bold}
+.hero{min-height:560px;padding:80px 8%;display:flex;align-items:center;background:radial-gradient(circle at 80% 30%,#4b3a12 0%,#17130a 25%,#090909 60%)}
+.hero .box{max-width:700px}.tag{color:var(--gold);letter-spacing:3px;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(42px,7vw,78px);margin:14px 0;line-height:.98}.hero p{color:#c5c5c5;font-size:18px;line-height:1.6}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:15px 25px;border-radius:6px;text-decoration:none;font-weight:bold;margin-top:15px}
+.section{padding:65px 7%}.section h2{text-align:center;font-size:34px;margin:0 0 12px}.sub{text-align:center;color:var(--muted);margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:var(--card);border:1px solid #242424;border-radius:14px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-5px);border-color:#57481f}
+.pic{height:210px;display:grid;place-items:center;font-size:75px;background:linear-gradient(135deg,#242424,#101010)}
+.info{padding:16px}.info h3{margin:0 0 8px}.price{color:var(--gold);font-size:19px;font-weight:bold;margin:10px 0}.add{width:100%;padding:11px;border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:6px;font-weight:bold;cursor:pointer}
+.banner{margin:0 7% 65px;padding:45px;border-radius:18px;background:linear-gradient(135deg,#1c1710,#0e0e0e);text-align:center;border:1px solid #46391c}
+footer{padding:35px 7%;background:#050505;color:#888;text-align:center;border-top:1px solid #222}
+#admin{display:none;position:fixed;inset:0;background:#000c;z-index:30;place-items:center}.panel{background:#171717;border:1px solid #3a3a3a;width:min(420px,92vw);padding:28px;border-radius:15px}.panel h2{margin-top:0}.panel input{width:100%;padding:13px;margin:8px 0;border-radius:6px;border:1px solid #444;background:#0d0d0d;color:#fff}.panel button{width:100%;padding:13px;background:var(--gold);border:0;border-radius:6px;font-weight:bold;margin-top:10px}
+.close{float:right;background:none!important;color:#fff!important;width:auto!important;margin:0!important}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}nav{display:none}.hero{min-height:480px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.section{padding:45px 5%}.hero{padding:60px 6%}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">CREZY <span>FASHION</span> NETWORK</div>
+<div>
+<nav style="display:inline"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a></nav>
+<button class="cartbtn">🛒 <span id="cartCount">0</span></button>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="box">
+<div class="tag">PREMIUM MEN'S LIFESTYLE</div>
+<h1>STYLE LIKE A KING.</h1>
+<p>Discover bold fashion, premium accessories and confident style — all in one place.</p>
+<a class="btn" href="#shop">SHOP THE COLLECTION</a>
+</div>
+</section>
+
+<section class="section" id="shop">
+<h2>Trending Collection 🔥</h2>
+<p class="sub">Selected styles for your everyday confidence.</p>
+<div class="grid">
+<div class="card"><div class="pic">👕</div><div class="info"><h3>Oversized T-Shirt</h3><div class="price">₹699</div><button class="add" onclick="addCart('Oversized T-Shirt')">ADD TO CART</button></div></div>
+<div class="card"><div class="pic">🌟</div><div class="info"><h3>Premium Perfume</h3><div class="price">₹999</div><button class="add" onclick="addCart('Premium Perfume')">ADD TO CART</button></div></div>
+<div class="card"><div class="pic">⛓️</div><div class="info"><h3>Signature Chain</h3><div class="price">₹499</div><button class="add" onclick="addCart('Signature Chain')">ADD TO CART</button></div></div>
+<div class="card"><div class="pic">⌚</div><div class="info"><h3>Classic Watch</h3><div class="price">₹1,299</div><button class="add" onclick="addCart('Classic Watch')">ADD TO CART</button></div></div>
+</div>
+</section>
+
+<div class="banner">
+<h2>👑 CREZY MEMBER STYLE</h2>
+<p>Fashion is not just what you wear. It's how you show up.</p>
+<a class="btn" href="#shop">EXPLORE NOW</a>
+</div>
+
+<section class="section" id="about">
+<h2>About Us</h2>
+<p class="sub">Crezy Fashion Network brings together fashion and lifestyle products designed for a bold generation.</p>
+</section>
+
+<footer>
+© 2026 Crezy Fashion Network · Premium Men's Fashion & Lifestyle<br><br>
+<button onclick="document.getElementById('admin').style.display='grid'" style="background:none;border:0;color:#555;cursor:pointer">Admin</button>
+</footer>
+
+<div id="admin">
+<div class="panel">
+<button class="close" onclick="document.getElementById('admin').style.display='none'">✕</button>
+<h2>Admin Login</h2>
+<input id="email" type="email" placeholder="Admin email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">LOGIN</button>
+<p id="msg" style="color:#ff8888"></p>
+</div>
+</div>
+
+<script>
+let cart=0;
+function addCart(product){cart++;document.getElementById('cartCount').textContent=cart;alert(product+' added to your cart!');}
+function login(){
+ const email=document.getElementById('email').value;
+ const pass=document.getElementById('password').value;
+ document.getElementById('msg').textContent='Demo login only. A real live website needs secure server-side authentication and a database.';
+}
+</script>
+</body>
+</html>
